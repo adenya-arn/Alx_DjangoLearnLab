@@ -1,7 +1,7 @@
 
 #We retrieve what we want and print it
 
-retrieved = Book.object.get(id = 1)
+retrieved = Book.objects.get(id = 1)
 print(retrieved)
 
 
