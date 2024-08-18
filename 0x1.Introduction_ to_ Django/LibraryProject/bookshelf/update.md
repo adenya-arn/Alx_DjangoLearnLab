@@ -1,9 +1,9 @@
 #after we have retreived we change the title name and save it
 
 
-Book.title = "Nineteen Eighty-Four"
+book.title = "Nineteen Eighty-Four"
 
-Book.save()
+book.save()
 
 #Expected output
 
