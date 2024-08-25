@@ -55,9 +55,9 @@ def books_by_author():
 
 #List all books in a library.
 def books_in_library():
-    lib_name = str(input("Library name:"))
-    lib_id = Library.objects.get(name = lib_name)
-    print(lib_name)
+    library_name = str(input("Library name:"))
+    lib_id = Library.objects.get(name = library_name)
+    print(library_name)
     books = lib_id.books.all()
     book_list = []
     for b in books:
@@ -80,4 +80,6 @@ def library_librarian():
 library_librarian()
 books_in_library()
 books_by_author()
+
+
 
