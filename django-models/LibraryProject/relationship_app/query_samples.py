@@ -11,6 +11,8 @@ django.setup()
 
 
 from relationship_app.models import Author, Book, Library, Librarian
+
+
 """
 def create_author():
     Instance = str(input("Add authors name:"))
@@ -40,21 +42,42 @@ create_author()"""
 
 
 #Query all books by a specific author.
+def books_by_author():
 
-author_name = str(input("Name of author whose books you want:"))
-authors = Author.objects.get(name = author_name )
-books_by_author = Book.objects.filter(author = authors)
-print(f"books by author/n {books_by_author} ")
+    author_name = str(input("Name of author whose books you want:"))
+    authors = Author.objects.get(name = author_name )
+    books_by_author = Book.objects.filter(author = authors)
+
+    for book in books_by_author:
+        print(book.title)
+    #print(f"books by author/n {book_list} ")
 
 
 #List all books in a library.
+"""def books_in_library():
+    lib_name = str(input("Library name:"))
+    lib_id = Library.objects.get(name = lib_name)
+    print(lib_name)
+    books = lib_id.books.all()
+    book_list = []
+    for b in books:
+        book_list.append(b.title)
+    
+    print(book_list) """
 
-lib_name = str(input("Name of library:"))
-books_by_libarary = Library.objects.get(name = lib_name)
-print(books_by_libarary)
-
+    #print(books_by_libarary)
+    
+    
 #Retrieve the librarian for a library.
+"""def library_librarian():
+    library_name = str(input("Name of library:"))
+    lib_id = Library.objects.get(name = library_name)
 
-librarian_name = str(input("Name of library:"))
-library_name = Librarian.objects.get(library = lib_name)
-print(library_name)
+    librarian_name = Librarian.objects.get(library = lib_id)
+    print(librarian_name)"""
+
+
+#library_librarian()
+#books_in_library()
+books_by_author()
+
