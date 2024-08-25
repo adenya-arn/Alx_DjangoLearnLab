@@ -21,4 +21,9 @@ urlpatterns = [
     path("lists/", include('relationship_app.urls')),
     path("details/", include('relationship_app.urls')),
     path('admin/', admin.site.urls),
+
+
+    path('book/add/', add_book, name='add_book'),
+    path('book/<int:book_id>/edit/', edit_book, name='edit_book'),
+    path('book/<int:book_id>/delete/', delete_book, name='delete_book'),
 ]

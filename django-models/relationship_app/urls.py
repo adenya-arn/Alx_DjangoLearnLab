@@ -1,8 +1,16 @@
 from django.urls import path
-from . import views
+from django.contrib.auth import views as auth_views
+from .views import register, CustomLoginView, CustomLogoutView, admin_view, librarian_view, member_view
+
+from django.urls import path
+from .views import list_books, LibraryDetailView
 
 urlpatterns = [
-    path("", views.home, name = "home"),
-    path("lists/", views.books_in_library_view,name="lists"),
-    path("details/", views.Library_Detail, name = "details")
+    path('books/', list_books, name='list_books'),  # Function-based view for books list
+    path('library/<int:pk>/', LibraryDetailView.as_view(), name='library_detail'),  # Class-based view for library detail
+    
+    
+    path('register/', register, name='register'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
 ]
