@@ -58,8 +58,8 @@ print(librarian_name)
 
 # Query all books by a specific author
 author_name = str(input("Name of author whose books you want: "))
-authors = Author.objects.get(name=author_name)
-books_by_author = Book.objects.filter(author=authors)
+author = Author.objects.get(name=author_name)
+books_by_author = Book.objects.filter(author=author)
 
 for book in books_by_author:
     print(book.title)
