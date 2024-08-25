@@ -1,16 +1,14 @@
 from django.urls import path
-from django.contrib.auth import views as auth_views
-from .views import register, CustomLoginView, CustomLogoutView, admin_view, librarian_view, member_view
-
-from django.urls import path
 from .views import list_books, LibraryDetailView
+from .views import add_book, edit_book, delete_book, list_books, user_login, user_logout, user_register
 
 urlpatterns = [
-    path('books/', list_books, name='list_books'),  # Function-based view for books list
-    path('library/<int:pk>/', LibraryDetailView.as_view(), name='library_detail'),  # Class-based view for library detail
-    
-    
-    path('register/', register, name='register'),
-    path('login/', CustomLoginView.as_view(), name='login'),
-    path('logout/', CustomLogoutView.as_view(), name='logout'),
+    path('books/', list_books, name='book_list'),
+    path('book/add/', add_book, name='add_book'),
+    path('book/<int:book_id>/edit/', edit_book, name='edit_book'),
+    path('book/<int:book_id>/delete/', delete_book, name='delete_book'),
+    path('login/', user_login, name='login'),
+    path('logout/', user_logout, name='logout'),
+    path('register/', user_register, name='register'),
 ]
+

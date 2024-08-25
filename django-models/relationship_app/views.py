@@ -23,9 +23,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
-from django.contrib.auth import get_user_model
+from django.contrib.auth import authenticate, login, logout,get_user_model
 
+from .models import Book, Author
 from django.http import HttpResponseForbidden
+
+
 # Create your views here.
 
 def home (request):
@@ -34,11 +37,11 @@ def home (request):
 
 
 def list_books(request, *args, **kwargs):
-    books = Book.objects.all()  # Query all books
+    if not request.user.is_authenticated:
+        return HttpResponseForbidden("You must be logged in to view this page.")
+    
+    books = Book.objects.all()
     return render(request, 'list_books.html', {'books': books})
-
-
-
 
 class Library_Detail(DetailView):
 
@@ -93,40 +96,89 @@ def member_view(request):
         return HttpResponse("Access Denied: You are not a Member.", status=403)
 
 
-
 def add_book(request):
     if not request.user.has_perm('relationship_app.can_add_book'):
         return HttpResponseForbidden("You do not have permission to add a book.")
     
     if request.method == 'POST':
-        form = BookForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('book_list')  # Assuming you have a view to list books
-    else:
-        form = BookForm()
-    return render(request, 'add_book.html', {'form': form})
+        title = request.POST.get('title')
+        author_id = request.POST.get('author_id')
+        
+        if title and author_id:
+            try:
+                author = Author.objects.get(id=author_id)
+                Book.objects.create(title=title, author=author)
+                return redirect('book_list')  # Redirect to the book list or another page
+            except Author.DoesNotExist:
+                return HttpResponse("Author not found.")
+        else:
+            return HttpResponse("Missing title or author ID.")
+    
+    return render(request, 'add_book.html')
 
 def edit_book(request, book_id):
     if not request.user.has_perm('relationship_app.can_change_book'):
         return HttpResponseForbidden("You do not have permission to edit this book.")
     
     book = get_object_or_404(Book, id=book_id)
+    
     if request.method == 'POST':
-        form = BookForm(request.POST, instance=book)
-        if form.is_valid():
-            form.save()
-            return redirect('book_list')
-    else:
-        form = BookForm(instance=book)
-    return render(request, 'edit_book.html', {'form': form})
+        title = request.POST.get('title')
+        author_id = request.POST.get('author_id')
+        
+        if title and author_id:
+            try:
+                author = Author.objects.get(id=author_id)
+                book.title = title
+                book.author = author
+                book.save()
+                return redirect('book_list')  # Redirect to the book list or another page
+            except Author.DoesNotExist:
+                return HttpResponse("Author not found.")
+        else:
+            return HttpResponse("Missing title or author ID.")
+    
+    return render(request, 'edit_book.html', {'book': book})
 
 def delete_book(request, book_id):
     if not request.user.has_perm('relationship_app.can_delete_book'):
         return HttpResponseForbidden("You do not have permission to delete this book.")
     
     book = get_object_or_404(Book, id=book_id)
+    
     if request.method == 'POST':
         book.delete()
-        return redirect('book_list')
+        return redirect('book_list')  # Redirect to the book list or another page
+    
     return render(request, 'confirm_delete.html', {'book': book})
+
+
+
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('book_list')  # Redirect after login
+        else:
+            return HttpResponse("Invalid login credentials.")
+    
+    return render(request, 'login.html')
+
+def user_logout(request):
+    logout(request)
+    return redirect('login')  # Redirect after logout
+
+def user_register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # Redirect to login after registration
+    else:
+        form = UserCreationForm()
+    
+    return render(request, 'register.html', {'form': form})

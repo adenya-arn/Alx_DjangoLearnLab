@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from relationship_app.views import add_book, edit_book, delete_book
+
 
 urlpatterns = [
     path("", include('relationship_app.urls')),
