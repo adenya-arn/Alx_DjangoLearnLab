@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import list_books, LibraryDetailView
-from .views import add_book, edit_book, delete_book, list_books, user_login, user_logout, user_register
+from django.urls import path
+from .views import add_book, edit_book, delete_book, list_books, user_login, user_logout, user_register, admin_view
 
 urlpatterns = [
     path('books/', list_books, name='book_list'),
@@ -10,5 +10,6 @@ urlpatterns = [
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
     path('register/', user_register, name='register'),
+    path('admin/', admin_view, name='admin_view'),
 ]
 

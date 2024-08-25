@@ -23,7 +23,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout,get_user_model
+from django.contrib.auth import authenticate, login, logout, get_user_model
 
 from .models import Book, Author
 from django.http import HttpResponseForbidden
@@ -140,21 +140,14 @@ def edit_book(request, book_id):
     
     return render(request, 'edit_book.html', {'book': book})
 
-def delete_book(request, book_id):
-    if not request.user.has_perm('relationship_app.can_delete_book'):
-        return HttpResponseForbidden("You do not have permission to delete this book.")
-    
-    book = get_object_or_404(Book, id=book_id)
-    
-    if request.method == 'POST':
-        book.delete()
-        return redirect('book_list')  # Redirect to the book list or another page
-    
-    return render(request, 'confirm_delete.html', {'book': book})
+def list_books(request):
+    if not request.user.is_authenticated:
+        return HttpResponseForbidden("You must be logged in to view this page.")
 
+    books = Book.objects.all()
+    return render(request, 'list_books.html', {'books': books})
 
-
-
+# Login view
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -162,23 +155,86 @@ def user_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('book_list')  # Redirect after login
+            return redirect('book_list')
         else:
             return HttpResponse("Invalid login credentials.")
-    
+
     return render(request, 'login.html')
 
+# Logout view
 def user_logout(request):
     logout(request)
-    return redirect('login')  # Redirect after logout
+    return redirect('login')
 
+# Registration view
 def user_register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  # Redirect to login after registration
+            return redirect('login')
     else:
         form = UserCreationForm()
     
     return render(request, 'register.html', {'form': form})
+
+# View for adding a book (permission check without decorator)
+def add_book(request):
+    if not request.user.is_authenticated:
+        return HttpResponseForbidden("You must be logged in to add books.")
+
+    if not request.user.has_perm('relationship_app.can_add_book'):
+        return HttpResponseForbidden("You do not have permission to add books.")
+
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        author_id = request.POST.get('author')
+        Book.objects.create(title=title, author_id=author_id)
+        return redirect('book_list')
+
+    return render(request, 'add_book.html')
+
+# View for editing a book (permission check without decorator)
+def edit_book(request, book_id):
+    if not request.user.is_authenticated:
+        return HttpResponseForbidden("You must be logged in to edit books.")
+
+    if not request.user.has_perm('relationship_app.can_change_book'):
+        return HttpResponseForbidden("You do not have permission to edit books.")
+
+    book = Book.objects.get(pk=book_id)
+
+    if request.method == 'POST':
+        book.title = request.POST.get('title')
+        author_id = request.POST.get('author')
+        book.author_id = author_id
+        book.save()
+        return redirect('book_list')
+
+    return render(request, 'edit_book.html', {'book': book})
+
+# View for deleting a book (permission check without decorator)
+def delete_book(request, book_id):
+    if not request.user.is_authenticated:
+        return HttpResponseForbidden("You must be logged in to delete books.")
+
+    if not request.user.has_perm('relationship_app.can_delete_book'):
+        return HttpResponseForbidden("You do not have permission to delete books.")
+
+    book = Book.objects.get(pk=book_id)
+    if request.method == 'POST':
+        book.delete()
+        return redirect('book_list')
+
+    return render(request, 'delete_book.html', {'book': book})
+
+# Admin view example
+def admin_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseForbidden("You must be logged in to access this page.")
+
+    if not hasattr(request.user, 'userprofile') or request.user.userprofile.role != 'Admin':
+        return HttpResponseForbidden("You do not have permission to access this page.")
+
+    # Render your admin page content here
+    return HttpResponse("Admin View")
