@@ -54,7 +54,7 @@ def books_by_author():
 
 
 #List all books in a library.
-"""def books_in_library():
+def books_in_library():
     lib_name = str(input("Library name:"))
     lib_id = Library.objects.get(name = lib_name)
     print(lib_name)
@@ -63,21 +63,21 @@ def books_by_author():
     for b in books:
         book_list.append(b.title)
     
-    print(book_list) """
+    print(book_list) 
 
     #print(books_by_libarary)
     
     
 #Retrieve the librarian for a library.
-"""def library_librarian():
+def library_librarian():
     library_name = str(input("Name of library:"))
     lib_id = Library.objects.get(name = library_name)
 
     librarian_name = Librarian.objects.get(library = lib_id)
-    print(librarian_name)"""
+    print(librarian_name)
 
 
-#library_librarian()
-#books_in_library()
+library_librarian()
+books_in_library()
 books_by_author()
 
