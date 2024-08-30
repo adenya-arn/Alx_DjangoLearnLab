@@ -1,15 +1,11 @@
 from django.urls import path
-from django.urls import path
-from .views import add_book, edit_book, delete_book, list_books, user_login, user_logout, user_register, admin_view
+from . import views
 
 urlpatterns = [
-    path('books/', list_books, name='book_list'),
-    path('book/add/', add_book, name='add_book'),
-    path('book/<int:book_id>/edit/', edit_book, name='edit_book'),
-    path('book/<int:book_id>/delete/', delete_book, name='delete_book'),
-    path('login/', user_login, name='login'),
-    path('logout/', user_logout, name='logout'),
-    path('register/', user_register, name='register'),
-    path('admin/', admin_view, name='admin_view'),
+    path('logout/', views.logout_view, name = 'logout'),
+    path('register/', views.register_view, name = 'register'),
+    path('login/', views.login_view, name = 'login'),
+    path('library/<int:pk>/', views.LibraryDetailView.as_view(), name = 'library_detail'),
+    path('lists/', views.list_books, name = "list_books"),
+    path('', views.home, name = "home"),
 ]
-
