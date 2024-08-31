@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class LibraryName(forms.Form):
     library_name = forms.CharField(max_length=300, label="Library name")
 
-class UserCreationForm(forms.Form):
+class RegisterForm(forms.Form):
     username = forms.CharField(max_length=20)
     password1 = forms.CharField(max_length=100, widget=forms.PasswordInput, label='Password')
     password2 = forms.CharField(max_length=100, widget=forms.PasswordInput, label='Confirm Password')

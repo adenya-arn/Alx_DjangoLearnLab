@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .models import Library, Book, Author, Librarian
 from.models import Library
-from django.views.generic import DetailView
-from .forms import LibraryName, LoginForm, UserCreationForm, AddBook, DeleteBook, ChangeBook
+from django.views.generic.detail import DetailView
+from .forms import LibraryName, LoginForm, RegisterForm, AddBook, DeleteBook, ChangeBook
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
 def home(request, *args, **kwargs):
@@ -51,10 +52,10 @@ def login_view(request, *args, **kwargs):
                
     return render(request, 'relationship_app/login.html', {'form':form})
 
-def register_view(request, *args, **kwargs):
+"""def register_view(request, *args, **kwargs):
     
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
@@ -76,9 +77,23 @@ def register_view(request, *args, **kwargs):
             return redirect ('home')
     
     else:
+        form = RegisterForm()
+
+    return render (request, 'relationship_app/register.html', {'form':form})
+"""
+
+
+def register_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
         form = UserCreationForm()
 
     return render (request, 'relationship_app/register.html', {'form':form})
+  
 
 def logout_view(request):
     #logout(request)
