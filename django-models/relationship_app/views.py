@@ -4,10 +4,11 @@ from.models import Library
 from django.views.generic.detail import DetailView
 from .forms import LibraryName, LoginForm, RegisterForm, AddBook, DeleteBook, ChangeBook
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 # Create your views here.
 
 def home(request, *args, **kwargs):
@@ -29,7 +30,7 @@ class LibraryDetailView(DetailView):
     model = Library
     template_name = 'relationship_app/library_detail.html'
 
-def login_view(request, *args, **kwargs):
+"""def login_view(request, *args, **kwargs):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -50,7 +51,20 @@ def login_view(request, *args, **kwargs):
     else:
         form = LoginForm()
                
+    return render(request, 'relationship_app/login.html', {'form':form})"""
+
+def login_view(request, *args, **kwargs):
+    if request.method == 'POST':
+        form =AuthenticationForm(request.post)
+        if form.id_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = AuthenticationForm()
+   
     return render(request, 'relationship_app/login.html', {'form':form})
+
 
 """def register_view(request, *args, **kwargs):
     
@@ -96,7 +110,7 @@ def register_view(request):
   
 
 def logout_view(request):
-    #logout(request)
+    logout(request)
     return render (request, 'relationship_app/logout.html')
 
 def is_admin(user):
