@@ -12,6 +12,8 @@ def create_user_profile(sender, instance, created, **kwargs):
 def save_user_profile(sender, instance, created, **kwargs):
     print(f"Signal triggered: User instance = {instance}")
     if created:
+        # Create a new UserProfile instance for the newly created user
         UserProfile.objects.create(user=instance)
     else:
-        instance.userprofile.save()
+        # Update existing UserProfile if needed
+        UserProfile.objects.update_or_create(user=instance)

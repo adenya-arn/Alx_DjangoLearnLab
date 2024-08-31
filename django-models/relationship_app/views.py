@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .models import Library, Book
+from .models import Library, Book, Author, Librarian
 from django.views.generic import DetailView
-from .forms import LibraryName, LoginForm, RegisterForm
+from .forms import LibraryName, LoginForm, RegisterForm, AddBook, DeleteBook, ChangeBook
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import user_passes_test, permission_required
 # Create your views here.
 
 def home(request, *args, **kwargs):
@@ -103,4 +103,46 @@ def librarian_view(request, *args, **kwargs):
 @user_passes_test(is_member)
 def member_view(request, *args, **kwargs):
     return render(request, 'member_view.html')
+
+@permission_required('relationship_app.can_add_book', raise_exception=True)
+def add_book(request, *args, **kwargs):
+    if request.method == 'POST':
+        form = AddBook(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            author = form.cleaned_data['author']
+            name = Author.objects.get(name=author)
+            new_book = Book.objects.create(title=title, author=name)
+            return redirect('home')
+    else:
+        form = AddBook()
     
+    return render (request, 'relationship_app/add_book.html', {'form':form})
+
+@permission_required('relationship_app.can_delete_book', raise_exception=True)
+def delete_book(request, *args, **kwargs):
+    if request.method == 'POST':
+        form = DeleteBook(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            book = Book.objects.filter(title=title)
+            book.delete()
+    else:
+        form = DeleteBook()    
+
+    return render (request, 'relationship_app/delete_book.html', {'form':form})
+
+@permission_required('relationship_app.can_change_book', raise_exception=True)
+def change_book(request, *args, **kwargs):
+    if request.method == 'POST':
+        form = ChangeBook(request.POST)
+        if form.is_valid():
+            title1 = form.cleaned_data['from_title']
+            title2 = form.cleaned_data['to_title']
+            book = Book.objects.get(title=title1)
+            book.title = title2
+            book.save()
+    else:
+        form = ChangeBook()       
+        
+    return render (request, 'relationship_app/change_book.html', {'form':form})

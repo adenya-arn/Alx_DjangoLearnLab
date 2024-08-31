@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'LibraryProject.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "Alx_Back_end",
+        "NAME": "ALXBACKEND",
         "USER": "root",
         "PASSWORD": "1Mpenzimysql.",
         "HOST": "127.0.0.1",
