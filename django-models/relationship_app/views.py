@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .models import Library, Book, Author, Librarian
+from.models import Library
 from django.views.generic import DetailView
-from .forms import LibraryName, LoginForm, RegisterForm, AddBook, DeleteBook, ChangeBook
+from .forms import LibraryName, LoginForm, UserCreationForm, AddBook, DeleteBook, ChangeBook
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.decorators import user_passes_test, permission_required
+from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import permission_required
 # Create your views here.
 
 def home(request, *args, **kwargs):
@@ -52,7 +54,7 @@ def login_view(request, *args, **kwargs):
 def register_view(request, *args, **kwargs):
     
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
@@ -74,7 +76,7 @@ def register_view(request, *args, **kwargs):
             return redirect ('home')
     
     else:
-        form =RegisterForm()
+        form = UserCreationForm()
 
     return render (request, 'relationship_app/register.html', {'form':form})
 
@@ -94,15 +96,15 @@ def is_member(user):
 
 @user_passes_test(is_admin)
 def admin_view(request, *args, **kwargs):
-    return render(request, 'admin_view.html')
+    return render(request, 'relationship_app/admin_view.html')
     
 @user_passes_test(is_librarian)
 def librarian_view(request, *args, **kwargs):
-    return render(request, 'librarian_view.html')
+    return render(request, 'relationship_app/librarian_view.html')
 
 @user_passes_test(is_member)
 def member_view(request, *args, **kwargs):
-    return render(request, 'member_view.html')
+    return render(request, 'relationship_app/member_view.html')
 
 @permission_required('relationship_app.can_add_book', raise_exception=True)
 def add_book(request, *args, **kwargs):
