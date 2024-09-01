@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import permission_required
 from bookshelf.models import CustomUser
 from django.http import HttpResponseForbidden, HttpResponse
 from .models import Book
+from .forms import ExampleForm
 # Create your views here.
 
 
