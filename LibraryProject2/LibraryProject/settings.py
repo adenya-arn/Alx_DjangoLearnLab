@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-aq7=akq0h5)i8+526-7^#1y%xv65st2a!lxe!_nxrw@a0$x_r^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -49,16 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'csp.middleware.CSPMiddleware',
 ]
-
-
-#my adds
-CSP_DEFAULT_SRC = ("'self'",)
-CSP_SCRIPT_SRC = ("'self'", 'https://cdnjs.cloudflare.com')
-CSP_STYLE_SRC = ("'self'", 'https://cdnjs.cloudflare.com')
-
-##
 
 ROOT_URLCONF = 'LibraryProject.urls'
 
@@ -87,7 +78,7 @@ WSGI_APPLICATION = 'LibraryProject.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "ALXBACKEND",
+        "NAME": "ALX_Backend",
         "USER": "root",
         "PASSWORD": "1Mpenzimysql.",
         "HOST": "127.0.0.1",
@@ -139,35 +130,6 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#my adds
-AUTH_USER_MODEL ='bookshelf.CustomUser'
 
 
-# Add additional browser-side protections
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'  # Prevents clickjacking
-SECURE_CONTENT_TYPE_NOSNIFF = True
-
-# Ensure cookies are sent over HTTPS only
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-
-
-
-# Redirect all HTTP requests to HTTPS
-SECURE_SSL_REDIRECT = True
-
-# Enable HTTP Strict Transport Security (HSTS) for one year
-SECURE_HSTS_SECONDS = 31536000  # One year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-
-
-# Prevent clickjacking by setting X-Frame-Options header to DENY
-X_FRAME_OPTIONS = 'DENY'
-
-# Prevent browsers from MIME-sniffing a response away from the declared content-type
-SECURE_CONTENT_TYPE_NOSNIFF = True
-
-# Enable browser's XSS filtering and prevent cross-site scripting attacks
-SECURE_BROWSER_XSS_FILTER = True
+AUTH_USER_MODEL = 'relationship_app.CustomUser'
