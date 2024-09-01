@@ -1,1 +1,0 @@
-First django task question.
