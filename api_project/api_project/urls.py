@@ -22,7 +22,7 @@ router = DefaultRouter()
 router.register(r'my-models', BookViewSet)
 
 urlpatterns = [
-    path('api/', include(router._urls)),
+    path('api/', include(router.urls)),
     path('', include('api.urls')),
     path('admin/', admin.site.urls),
 ]
