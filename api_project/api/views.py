@@ -1,4 +1,4 @@
-from .serializers import BookSerilizer
+from .serializers import BookSerializer
 from django.shortcuts import render
 import rest_framework.generics
 from .models import Book
@@ -11,7 +11,7 @@ import rest_framework
 
 class BookList(rest_framework.generics.ListAPIView):
     queryset = Book.objects.all()
-    serializer_class = BookSerilizer
+    serializer_class = BookSerializer
 
 """  def get_queryset(self):
         queryset = self.queryset
@@ -24,5 +24,5 @@ class BookList(rest_framework.generics.ListAPIView):
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
-    serializer_class = BookSerilizer
+    serializer_class = BookSerializer
     permission_classes = [IsAuthenticated]
