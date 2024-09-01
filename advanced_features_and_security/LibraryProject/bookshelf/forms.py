@@ -9,7 +9,7 @@ class BookForm(forms.ModelForm):
         fields = ['title', 'author']
 
 
-class BookSearchForm(forms.Form):
+class ExampleForm(forms.Form):
     query = forms.CharField(max_length=100, required=True)
                             
 
