@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import permission_required
 from bookshelf.models import CustomUser
-from django.http import HttpResponseForbidden
+from django.http import HttpResponseForbidden, HttpResponse
+from .models import Book
 # Create your views here.
 
 
@@ -23,3 +24,34 @@ def delete_profile(request, user_id):
     user = get_object_or_404(CustomUser, id=user_id)
     # Logic to delete the user profile
     pass
+
+# bookshelf/views.py
+
+
+@permission_required('bookshelf.can_edit', raise_exception=True)
+def edit_book(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    if request.method == 'POST':
+        # handle form submission
+        book.title = request.POST.get('title')
+        book.author = request.POST.get('author')
+        book.save()
+        return redirect('book_detail', book_id=book.id)
+    return render(request, 'bookshelf/edit_book.html', {'book': book})
+
+
+
+def search_books(request):
+    query = request.GET.get('q')
+    if query:
+        # Safely filter books using Django ORM
+        books = Book.objects.filter(title__icontains=query)
+    else:
+        books = Book.objects.all()
+    return render(request, 'bookshelf/book_list.html', {'books': books})
+
+
+def some_view(request):
+    response = HttpResponse("Content")
+    response['Content-Security-Policy'] = "default-src 'self'; script-src 'self' https://trusted-scripts.example.com"
+    return response
