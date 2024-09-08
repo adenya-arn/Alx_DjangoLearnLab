@@ -3,7 +3,7 @@ from rest_framework import status
 from .models import Book, Author
 from .serializers import BookSerializer
 from django.urls import reverse
-
+from django.contrib.auth import get_user_model
 
 
 
@@ -53,3 +53,21 @@ class BookTests(APITestCase):
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Book.objects.count(), 0)
+
+
+
+class BookTests(APITestCase):
+    
+    def setUp(self):
+        # Create a test user
+        self.user = get_user_model().objects.create_user(
+            username='testuser',
+            password='testpassword'
+        )
+        # Login the test user
+        self.client.login(username='testuser', password='testpassword')
+        
+    def test_create_book(self):
+        # Example test to create a book
+        response = self.client.post('/books/', {'title': 'Test Book', 'publication_year': 2024})
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
