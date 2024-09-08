@@ -4,9 +4,9 @@ from .models import Book
 from .serializers import BookSerializer
 from rest_framework.permissions import IsAuthenticated
 from .filters import BookFilter
-from django_filters.rest_framework import DjangoFilterBackend
+from django_filters import rest_framework as filters
 # Create your views here.
-
+"""
 
 class BookListView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
@@ -21,4 +21,47 @@ class BookListView(generics.ListCreateAPIView):
 class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    permissions = [IsAuthenticated]
+    permissions = [IsAuthenticated]"""
+
+# View for listing all books
+class BookListView(generics.ListAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+# View for retrieving a single book by ID
+class BookDetailView(generics.RetrieveAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+# View for creating a new book
+class BookCreateView(generics.CreateAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+# View for updating an existing book
+class BookUpdateView(generics.UpdateAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+# View for deleting a book
+class BookDeleteView(generics.DestroyAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+
+# Define a filter set for the Book model
+class BookFilter(filters.FilterSet):
+    title = filters.CharFilter(lookup_expr='icontains')
+    author = filters.CharFilter(lookup_expr='icontains')
+    publication_year = filters.NumberFilter()
+
+    class Meta:
+        model = Book
+        fields = ['title', 'author', 'publication_year']
+
+# View for listing all books with filtering
+class BookListView(generics.ListAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filterset_class = BookFilter
