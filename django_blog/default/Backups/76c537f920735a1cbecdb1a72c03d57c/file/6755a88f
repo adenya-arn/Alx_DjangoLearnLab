@@ -1,0 +1,21 @@
+file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/forms.py {"mtime":1726428254335,"ctime":1726423963388,"size":503,"etag":"3d2c6ogi5g7","orphaned":false,"typeId":""}
+from django import forms
+from .models import Post, Comment
+from taggit.forms import TagWidget
+
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'content', 'tags']
+        widgets = {
+            'tags': TagWidget(),
+        }
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+        widgets = {
+            'content': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Write a comment...'}),
+        }

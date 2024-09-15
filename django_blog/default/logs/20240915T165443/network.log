@@ -22,3 +22,17 @@
 2024-09-15 21:18:56.290 [error] electron #576: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
 2024-09-15 21:18:59.241 [error] electron #577: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
 2024-09-15 21:18:59.931 [error] electron #578: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:10:16.917 [error] electron #1178: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NETWORK_CHANGED
+2024-09-15 23:10:16.918 [error] electron #1179: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NETWORK_CHANGED
+2024-09-15 23:10:19.934 [error] electron #1181: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:10:19.939 [error] electron #1182: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:10:19.948 [error] electron #1183: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:10:23.393 [error] electron #1184: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:10:46.309 [error] electron #1185: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:10:49.691 [error] electron #1186: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:20:08.386 [error] electron #1188: https://az764295.vo.msecnd.net/extensions/marketplace.json - error GET net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:25:08.477 [error] electron #1189: https://az764295.vo.msecnd.net/extensions/marketplace.json - error GET net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:25:49.955 [error] electron #1190: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:25:53.042 [error] electron #1191: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:26:44.460 [error] electron #1192: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED
+2024-09-15 23:26:47.990 [error] electron #1193: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED

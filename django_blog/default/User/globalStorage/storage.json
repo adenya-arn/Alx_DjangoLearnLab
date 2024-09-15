@@ -130,8 +130,7 @@
                     },
                     {
                         "id": "saveAll",
-                        "label": "Save A&&ll",
-                        "enabled": false
+                        "label": "Save A&&ll"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1702,7 +1701,7 @@
             "backupPath": "/home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/default/Backups/76c537f920735a1cbecdb1a72c03d57c",
             "uiState": {
                 "mode": 1,
-                "x": 0,
+                "x": 960,
                 "y": 64,
                 "width": 960,
                 "height": 1016
