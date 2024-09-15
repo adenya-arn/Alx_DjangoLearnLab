@@ -1,0 +1,89 @@
+2024-09-15 16:54:47.368 [info] Experiment 'pythonRecommendTensorboardExt' is active
+2024-09-15 16:54:47.368 [info] Experiment 'pythonSurveyNotificationcf' is active
+2024-09-15 16:54:47.368 [info] Experiment 'pythonTerminalEnvVarActivation' is active
+2024-09-15 16:54:47.368 [info] Experiment 'pythonTestAdapter' is active
+2024-09-15 16:54:47.397 [warning] Dir "/home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/.pixi/envs" is not watchable (directory does not exist)
+2024-09-15 16:54:47.690 [info] > pyenv which python
+2024-09-15 16:54:47.690 [info] cwd: .
+2024-09-15 16:54:47.725 [info] > pixi --version
+2024-09-15 16:54:47.726 [warning] could not find a pixi interpreter for the interpreter at python
+2024-09-15 16:54:47.747 [info] > python -c "import sys;print(sys.executable)"
+2024-09-15 16:54:47.748 [error] [Error: Command failed: python -c "import sys;print(sys.executable)"
+/bin/sh: 1: python: not found
+
+	at genericNodeError (node:internal/errors:984:15)
+	at wrappedFn (node:internal/errors:538:14)
+	at ChildProcess.exithandler (node:child_process:423:12)
+	at ChildProcess.emit (node:events:531:35)
+	at maybeClose (node:internal/child_process:1105:16)
+	at ChildProcess._handle.onexit (node:internal/child_process:305:5)] {
+  code: 127,
+  killed: false,
+  signal: null,
+  cmd: 'python -c "import sys;print(sys.executable)"'
+}
+2024-09-15 16:54:49.661 [info] Starting Pylance language server.
+2024-09-15 16:54:50.148 [info] Experiment 'pythonRecommendTensorboardExt' is active
+2024-09-15 16:54:50.148 [info] Experiment 'pythonSurveyNotificationcf' is active
+2024-09-15 16:54:50.148 [info] Experiment 'pythonTerminalEnvVarActivation' is active
+2024-09-15 16:54:50.148 [info] Experiment 'pythonTestAdapter' is active
+2024-09-15 16:54:50.150 [warning] Dir "/home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/.pixi/envs" is not watchable (directory does not exist)
+2024-09-15 16:54:50.289 [info] Default formatter is set to null for workspace /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog
+2024-09-15 16:54:50.302 [info] Starting Environment refresh
+2024-09-15 16:54:50.302 [info] Searching for interpreters in posix paths locator
+2024-09-15 16:54:50.306 [info] Searching for pyenv environments
+2024-09-15 16:54:50.306 [info] Searching for conda environments
+2024-09-15 16:54:50.307 [info] Searching for global virtual environments
+2024-09-15 16:54:50.307 [info] Searching for custom virtual environments
+2024-09-15 16:54:50.314 [info] pyenv is not installed
+2024-09-15 16:54:50.314 [info] Finished searching for pyenv environments: 11 milliseconds
+2024-09-15 16:54:50.315 [info] Finished searching for custom virtual envs: 11 milliseconds
+2024-09-15 16:54:50.321 [info] > conda info --json
+2024-09-15 16:54:50.329 [info] > hatch env show --json
+2024-09-15 16:54:50.329 [info] cwd: .
+2024-09-15 16:54:50.459 [info] > pyenv which python
+2024-09-15 16:54:50.459 [info] cwd: .
+2024-09-15 16:54:50.459 [info] Finished searching for global virtual envs: 155 milliseconds
+2024-09-15 16:54:51.678 [info] Found: /bin/python3 --> /bin/python3.10
+2024-09-15 16:54:51.692 [info] Found: /bin/python3.10 --> /bin/python3.10
+2024-09-15 16:54:51.731 [info] Found: /usr/bin/python3 --> /usr/bin/python3.10
+2024-09-15 16:54:51.736 [info] Found: /usr/bin/python3.10 --> /usr/bin/python3.10
+2024-09-15 16:54:51.763 [info] Finished searching for interpreters in posix paths locator: 1458 milliseconds
+2024-09-15 16:54:51.763 [info] > /bin/python3 -I ~/.vscode/extensions/ms-python.python-2024.14.1-linux-x64/python_files/get_output_via_markers.py ~/.vscode/extensions/ms-python.python-2024.14.1-linux-x64/python_files/interpreterInfo.py
+2024-09-15 16:54:51.774 [info] > /usr/bin/python3 -I ~/.vscode/extensions/ms-python.python-2024.14.1-linux-x64/python_files/get_output_via_markers.py ~/.vscode/extensions/ms-python.python-2024.14.1-linux-x64/python_files/interpreterInfo.py
+2024-09-15 16:54:51.774 [info] Environments refresh paths discovered (event): 1476 milliseconds
+2024-09-15 16:54:51.774 [info] Environments refresh paths discovered: 1476 milliseconds
+2024-09-15 16:54:51.806 [info] Environments refresh finished (event): 1508 milliseconds
+2024-09-15 16:54:51.815 [info] Environment refresh took 1517 milliseconds
+2024-09-15 16:54:51.819 [warning] could not find a pixi interpreter for the interpreter at /bin/python3
+2024-09-15 16:54:51.841 [info] Python interpreter path: /bin/python3
+2024-09-15 16:54:51.846 [warning] could not find a pixi interpreter for the interpreter at /bin/python3
+2024-09-15 16:54:53.052 [info] Starting Pylance language server.
+2024-09-15 16:54:53.068 [info] > /bin/python3 -I ~/.vscode/extensions/ms-python.python-2024.14.1-linux-x64/python_files/get_output_via_markers.py ~/.vscode/extensions/ms-python.python-2024.14.1-linux-x64/python_files/interpreterInfo.py
+2024-09-15 16:57:59.408 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 17:02:24.571 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 17:03:21.904 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 17:05:58.730 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 17:07:23.821 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/models.py
+2024-09-15 19:00:47.003 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/models.py
+2024-09-15 20:20:15.421 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 20:21:37.163 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 20:29:46.129 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/models.py
+2024-09-15 20:32:38.961 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 20:36:14.308 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 20:37:14.566 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 20:38:27.948 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 20:41:32.176 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 20:49:46.187 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/urls.py
+2024-09-15 20:49:50.541 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/urls.py
+2024-09-15 20:55:05.538 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 21:09:25.190 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 21:10:04.304 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 21:11:30.444 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 21:13:04.140 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/forms.py
+2024-09-15 21:13:07.494 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 21:19:17.048 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/urls.py
+2024-09-15 21:40:12.192 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 21:41:04.221 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/models.py
+2024-09-15 21:41:26.456 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/models.py
+2024-09-15 21:42:10.276 [info] Discover tests for workspace name: django_blog - uri: /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/forms.py

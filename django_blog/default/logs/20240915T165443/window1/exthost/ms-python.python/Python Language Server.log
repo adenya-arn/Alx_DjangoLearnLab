@@ -1,0 +1,73 @@
+2024-09-15 16:54:48.957 [info] (Client) Pylance async client (2024.9.1) started with python extension (2024.14.1)
+2024-09-15 16:54:49.631 [info] [Info  - 4:54:49 PM] (22576) Server root directory: file:///root/.vscode/extensions/ms-python.vscode-pylance-2024.9.1/dist
+2024-09-15 16:54:49.631 [info] [Info  - 4:54:49 PM] (22576) Pylance language server 2024.9.1 (pyright version 1.1.378, commit ce64adc1) starting
+2024-09-15 16:54:49.645 [info] [Info  - 4:54:49 PM] (22576) Starting service instance "django_blog"
+2024-09-15 16:54:49.683 [info] [Info  - 4:54:49 PM] (22576) No include entries specified; assuming /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog
+2024-09-15 16:54:49.685 [info] [Info  - 4:54:49 PM] (22576) Auto-excluding **/node_modules
+2024-09-15 16:54:49.685 [info] [Info  - 4:54:49 PM] (22576) Auto-excluding **/__pycache__
+2024-09-15 16:54:49.685 [info] [Info  - 4:54:49 PM] (22576) Auto-excluding **/.*
+2024-09-15 16:54:49.789 [info] [Info  - 4:54:49 PM] (22576) Found 13 source files
+2024-09-15 16:54:50.157 [info] [Info  - 4:54:50 PM] Server process exited successfully
+2024-09-15 16:54:52.353 [info] (Client) Pylance async client (2024.9.1) started with python extension (2024.14.1)
+2024-09-15 16:54:53.030 [info] [Info  - 4:54:53 PM] (22698) Server root directory: file:///root/.vscode/extensions/ms-python.vscode-pylance-2024.9.1/dist
+2024-09-15 16:54:53.031 [info] [Info  - 4:54:53 PM] (22698) Pylance language server 2024.9.1 (pyright version 1.1.378, commit ce64adc1) starting
+2024-09-15 16:54:53.038 [info] [Info  - 4:54:53 PM] (22698) Starting service instance "django_blog"
+2024-09-15 16:54:53.117 [info] [Info  - 4:54:53 PM] (22698) Setting environmentName for service "django_blog": "3.10.12 (global)"
+2024-09-15 16:54:53.118 [info] [Info  - 4:54:53 PM] (22698) Setting pythonPath for service "django_blog": "/bin/python3"
+2024-09-15 16:54:53.118 [info] [Info  - 4:54:53 PM] (22698) No include entries specified; assuming /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog
+2024-09-15 16:54:53.119 [info] [Info  - 4:54:53 PM] (22698) Auto-excluding **/node_modules
+2024-09-15 16:54:53.119 [info] [Info  - 4:54:53 PM] (22698) Auto-excluding **/__pycache__
+2024-09-15 16:54:53.120 [info] [Info  - 4:54:53 PM] (22698) Auto-excluding **/.*
+2024-09-15 16:54:53.147 [info] [Info  - 4:54:53 PM] (22698) Assuming Python version 3.10.12.final.0
+2024-09-15 16:54:53.235 [info] [Info  - 4:54:53 PM] (22698) Found 13 source files
+2024-09-15 16:54:53.609 [info] [Info  - 4:54:53 PM] (22698) Background analysis(1) root directory: file:///root/.vscode/extensions/ms-python.vscode-pylance-2024.9.1/dist
+2024-09-15 16:54:53.612 [info] [Info  - 4:54:53 PM] (22698) Background analysis(1) started
+2024-09-15 16:55:01.293 [info] [Info  - 4:55:01 PM] (22698) Indexer background runner(2) root directory: file:///root/.vscode/extensions/ms-python.vscode-pylance-2024.9.1/dist (index)
+2024-09-15 16:55:01.294 [info] [Info  - 4:55:01 PM] (22698) Indexing(2) started
+2024-09-15 16:55:02.141 [info] [Info  - 4:55:02 PM] (22698) scanned(2) 127 files over 1 exec env
+2024-09-15 16:55:02.880 [info] [Info  - 4:55:02 PM] (22698) indexed(2) 72 files over 1 exec env
+2024-09-15 16:55:02.919 [info] [Info  - 4:55:02 PM] (22698) Indexing finished(2).
+2024-09-15 16:58:00.058 [info] [Info  - 4:58:00 PM] (22698) Found 14 source files
+2024-09-15 17:02:25.220 [info] [Info  - 5:02:25 PM] (22698) Found 15 source files
+2024-09-15 17:03:22.449 [info] [Info  - 5:03:22 PM] (22698) Found 16 source files
+2024-09-15 17:07:24.459 [info] [Info  - 5:07:24 PM] (22698) Found 17 source files
+2024-09-15 18:57:14.759 [info] [Info  - 6:57:14 PM] (22698) Starting service instance "<default>"
+2024-09-15 18:57:14.797 [info] [Info  - 6:57:14 PM] (22698) Setting environmentName for service "<default>": "3.10.12 (global)"
+2024-09-15 18:57:14.797 [info] [Info  - 6:57:14 PM] (22698) Setting pythonPath for service "<default>": "/bin/python3"
+2024-09-15 18:57:14.797 [info] [Info  - 6:57:14 PM] (22698) No include entries specified; assuming /<default workspace root>
+2024-09-15 18:57:14.798 [info] [Info  - 6:57:14 PM] (22698) Auto-excluding **/node_modules
+2024-09-15 18:57:14.798 [info] [Info  - 6:57:14 PM] (22698) Auto-excluding **/__pycache__
+2024-09-15 18:57:14.798 [info] [Info  - 6:57:14 PM] (22698) Auto-excluding **/.*
+2024-09-15 18:57:14.828 [info] [Info  - 6:57:14 PM] (22698) Assuming Python version 3.10.12.final.0
+2024-09-15 18:57:14.880 [info] [Error - 6:57:14 PM] (22698) File or directory "/<default workspace root>" does not exist.
+2024-09-15 18:57:14.880 [info] [Info  - 6:57:14 PM] (22698) No source files found.
+2024-09-15 18:57:15.365 [info] [Info  - 6:57:15 PM] (22698) Background analysis(3) root directory: file:///root/.vscode/extensions/ms-python.vscode-pylance-2024.9.1/dist
+2024-09-15 18:57:15.368 [info] [Info  - 6:57:15 PM] (22698) Background analysis(3) started
+2024-09-15 19:00:47.561 [info] [Info  - 7:00:47 PM] (22698) Found 18 source files
+2024-09-15 19:01:43.310 [info] [Info  - 7:01:43 PM] (22698) Found 18 source files
+2024-09-15 19:21:21.145 [info] [Info  - 7:21:21 PM] (22698) Found 18 source files
+2024-09-15 20:20:16.001 [info] [Info  - 8:20:16 PM] (22698) Found 19 source files
+2024-09-15 20:21:37.734 [info] [Info  - 8:21:37 PM] (22698) Found 20 source files
+2024-09-15 20:29:46.691 [info] [Info  - 8:29:46 PM] (22698) Found 21 source files
+2024-09-15 20:32:39.103 [info] [Info  - 8:32:39 PM] (22698) Found 22 source files
+2024-09-15 20:36:14.457 [info] [Info  - 8:36:14 PM] (22698) Found 23 source files
+2024-09-15 20:37:15.146 [info] [Info  - 8:37:15 PM] (22698) Found 24 source files
+2024-09-15 20:38:28.525 [info] [Info  - 8:38:28 PM] (22698) Found 25 source files
+2024-09-15 20:41:32.758 [info] [Info  - 8:41:32 PM] (22698) Found 26 source files
+2024-09-15 20:48:10.561 [info] [Info  - 8:48:10 PM] (22698) Found 27 source files
+2024-09-15 20:49:46.651 [info] [Info  - 8:49:46 PM] (22698) Found 28 source files
+2024-09-15 20:49:51.229 [info] [Info  - 8:49:51 PM] (22698) Found 29 source files
+2024-09-15 20:55:06.120 [info] [Info  - 8:55:06 PM] (22698) Found 30 source files
+2024-09-15 21:09:25.768 [info] [Info  - 9:09:25 PM] (22698) Found 31 source files
+2024-09-15 21:10:04.890 [info] [Info  - 9:10:04 PM] (22698) Found 32 source files
+2024-09-15 21:11:31.081 [info] [Info  - 9:11:31 PM] (22698) Found 33 source files
+2024-09-15 21:12:44.062 [info] [Info  - 9:12:44 PM] (22698) Found 34 source files
+2024-09-15 21:13:04.609 [info] [Info  - 9:13:04 PM] (22698) Found 35 source files
+2024-09-15 21:13:08.132 [info] [Info  - 9:13:08 PM] (22698) Found 36 source files
+2024-09-15 21:19:17.510 [info] [Info  - 9:19:17 PM] (22698) Found 37 source files
+2024-09-15 21:38:50.671 [info] [Info  - 9:38:50 PM] (22698) Found 38 source files
+2024-09-15 21:40:12.660 [info] [Info  - 9:40:12 PM] (22698) Found 39 source files
+2024-09-15 21:41:04.379 [info] [Info  - 9:41:04 PM] (22698) Found 40 source files
+2024-09-15 21:41:26.975 [info] [Info  - 9:41:26 PM] (22698) Found 41 source files
+2024-09-15 21:41:40.392 [info] [Info  - 9:41:40 PM] (22698) Found 42 source files
+2024-09-15 21:42:10.730 [info] [Info  - 9:42:10 PM] (22698) Found 43 source files

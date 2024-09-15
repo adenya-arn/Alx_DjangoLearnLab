@@ -1,0 +1,46 @@
+2024-09-15 16:54:48.212 [info] Configuration changed
+2024-09-15 16:54:50.155 [info] Configuration changed
+2024-09-15 16:54:50.470 [info] Configuration changed
+2024-09-15 16:55:00.429 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 16:58:51.074 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/apps.py
+2024-09-15 16:58:55.052 [info] /home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/apps.py closed
+2024-09-15 16:58:55.075 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 17:06:13.723 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/models.py
+2024-09-15 19:11:42.111 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/base.html
+2024-09-15 19:21:50.909 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/static/css/style.css
+2024-09-15 19:22:37.224 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/base.html
+2024-09-15 20:18:52.334 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/static/js/scripts.js
+2024-09-15 20:19:31.304 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 20:29:18.424 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/models.py
+2024-09-15 20:30:00.062 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 20:43:34.066 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/login.html
+2024-09-15 20:45:13.715 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/register.html
+2024-09-15 20:45:22.058 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/base.html
+2024-09-15 20:45:23.219 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/login.html
+2024-09-15 20:45:28.782 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/register.html
+2024-09-15 20:47:10.537 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/profile.html
+2024-09-15 20:47:18.710 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/register.html
+2024-09-15 20:47:25.928 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/profile.html
+2024-09-15 20:48:09.879 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/urls.py
+2024-09-15 20:49:05.833 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/urls.py
+2024-09-15 20:49:49.270 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/urls.py
+2024-09-15 20:49:51.375 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/profile.html
+2024-09-15 20:50:56.498 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/README.md
+2024-09-15 20:54:27.417 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 20:55:13.679 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/README.md
+2024-09-15 21:08:10.132 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 21:12:43.450 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/forms.py
+2024-09-15 21:13:06.157 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
+2024-09-15 21:14:37.160 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/post_list.html
+2024-09-15 21:15:37.042 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/post_detail.html
+2024-09-15 21:16:01.413 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/post_form.html
+2024-09-15 21:17:23.694 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/post_confirm_delete.html
+2024-09-15 21:18:02.115 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/urls.py
+2024-09-15 21:27:59.198 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/README.md
+2024-09-15 21:38:24.158 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/models.py
+2024-09-15 21:39:19.374 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/django_blog/settings.py
+2024-09-15 21:40:43.234 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/models.py
+2024-09-15 21:41:51.508 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/forms.py
+2024-09-15 21:42:14.160 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/templates/blog/post_confirm_delete.html
+2024-09-15 21:42:16.302 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/forms.py
+2024-09-15 21:42:56.404 [info] Active editor: file:///home/zoro/Desktop/PROGRAMMING/Alx_DjangoLearnLab/django_blog/blog/views.py
