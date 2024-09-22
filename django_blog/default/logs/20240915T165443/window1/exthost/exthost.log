@@ -784,3 +784,19 @@
 	at Timeout.I [as _onTimeout] (/root/.vscode/extensions/ms-python.vscode-pylance-2024.9.1/dist/vendor.bundle.js:2:1792831)
 	at listOnTimeout (node:internal/timers:573:17)
 	at process.processTimers (node:internal/timers:514:7)
+2024-09-16 00:01:49.243 [info] Extension host terminating: renderer closed the MessagePort
+2024-09-16 00:01:49.287 [error] TypeError: r.some is not a function
+	at d.saveToDisk (/root/.vscode/extensions/vscodevim.vim-1.28.1/out/extension.js:2:646151)
+	at t.deactivate (/root/.vscode/extensions/vscodevim.vim-1.28.1/out/extension.js:2:176792)
+	at m.eb (/snap/code/169/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:167:10082)
+	at /snap/code/169/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:167:8153
+	at Array.map (<anonymous>)
+	at m.$ (/snap/code/169/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:167:8140)
+	at m.terminate (/snap/code/169/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:167:8413)
+	at $.terminate (/snap/code/169/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:171:1513)
+	at n (/snap/code/169/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:184:10613)
+	at MessagePortMain.<anonymous> (/snap/code/169/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:184:6805)
+	at MessagePortMain.emit (node:events:519:28)
+	at MessagePortMain.emit (node:domain:488:12)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2619)
+2024-09-16 00:01:49.316 [info] Extension host with pid 22427 exiting with code 0
