@@ -6,12 +6,25 @@ from rest_framework.authtoken.models import Token
 User = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
+    following = serializers.PrimaryKeyRelatedField(
+        many=True,
+        queryset=User.objects.all(),
+        required=False
+    )
+    password = serializers.CharField(write_only=True)
+
     class Meta:
         model = User
-        following = serializers.PrimaryKeyRelatedField(many=True, queryset=CustomUser.objects.all())
-        fields = ['username', 'email', 'bio', 'profile_picture', 'followers']
+        fields = ['username', 'email', 'bio', 'profile_picture', 'followers', 'following', 'password']
         read_only_fields = ['followers']
 
+    def create(self, validated_data):
+        following = validated_data.pop('following', [])
+        user = User.objects.create_user(**validated_data)
+        
+        # Set following relationship if any
+        user.following.set(following)
+        return user
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):

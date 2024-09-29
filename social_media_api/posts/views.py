@@ -42,27 +42,56 @@ class PostViewSet(viewsets.ModelViewSet):
 class LikePostView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
-    def post(self, request, pk):
-        # Fetch the post object using `get_object_or_404`
+    def post(self, request, pk, *args, **kwargs):
+        # Fetch the post
         post = get_object_or_404(Post, pk=pk)
-        
-        # Get or create a Like object
+
+        # Create a Like instance
         like, created = Like.objects.get_or_create(user=request.user, post=post)
-        
+
         if created:
-            return Response({'message': 'Post liked!'}, status=status.HTTP_201_CREATED)
+            # Create a notification for the post's author
+            Notification.objects.create(
+                recipient=post.author,  # Assuming Post has an author field
+                actor=request.user,
+                verb='liked',
+                target=post  # Post object being liked
+            )
+            return Response({'message': 'Post liked.'}, status=status.HTTP_201_CREATED)
         else:
-            return Response({'message': 'You already liked this post.'}, status=status.HTTP_200_OK)
+            return Response({'message': 'You already liked this post.'}, status=status.HTTP_400_BAD_REQUEST)
+
 
 @action(detail=True, methods=['post'])
 class UnlikePostView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
-    def post(self, request, pk):
+    def post(self, request, pk, *args, **kwargs):
         post = get_object_or_404(Post, pk=pk)
+
         try:
+            # Attempt to remove the like
             like = Like.objects.get(user=request.user, post=post)
             like.delete()
-            return Response({'message': 'Post unliked!'}, status=status.HTTP_200_OK)
+            return Response({'message': 'Post unliked.'}, status=status.HTTP_204_NO_CONTENT)
         except Like.DoesNotExist:
             return Response({'message': 'You have not liked this post.'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class FeedView(generics.GenericAPIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        # Get the current user
+        user = request.user
+
+        # Get all users that the current user is following
+        following_users = user.following.all()  # Assuming 'following' is the ManyToMany field in your User model
+
+        # Fetch posts from the followed users, ordered by creation date
+        posts = Post.objects.filter(author__in=following_users).order_by('-created_at')  # Adjust the field name as necessary
+
+        # Serialize the posts
+        serializer = PostSerializer(posts, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
