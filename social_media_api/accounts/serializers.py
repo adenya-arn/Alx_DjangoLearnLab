@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
         queryset=User.objects.all(),
         required=False
     )
-    password = serializers.CharField(write_only=True)  # Ensure that this line exists
+    password = serializers.CharField()  
 
     class Meta:
         model = User
@@ -22,7 +22,7 @@ class UserSerializer(serializers.ModelSerializer):
         following = validated_data.pop('following', [])
         user = get_user_model().objects.create_user(**validated_data)  # This line uses get_user_model()
 
-        # Set following relationship if any
+    
         user.following.set(following)
         return user
 
