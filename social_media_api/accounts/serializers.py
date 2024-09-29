@@ -20,7 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         following = validated_data.pop('following', [])
-        user = User.objects.create_user(**validated_data)  # This line uses get_user_model()
+        user = get_user_model().objects.create_user(**validated_data)  # This line uses get_user_model()
 
         # Set following relationship if any
         user.following.set(following)
