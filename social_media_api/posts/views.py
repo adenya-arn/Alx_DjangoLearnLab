@@ -44,7 +44,7 @@ class LikePostView(generics.GenericAPIView):
 
     def post(self, request, pk, *args, **kwargs):
         # Fetch the post
-        post = get_object_or_404(Post, pk=pk)
+        post = generics.get_object_or_404(Post, pk=pk)
 
         # Create a Like instance
         like, created = Like.objects.get_or_create(user=request.user, post=post)
@@ -67,7 +67,7 @@ class UnlikePostView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, pk, *args, **kwargs):
-        post = get_object_or_404(Post, pk=pk)
+        post = generics.get_object_or_404(Post, pk=pk)
 
         try:
             # Attempt to remove the like
