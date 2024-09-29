@@ -146,7 +146,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_SSL_REDIRECT = True  # If you're using HTTPS
 
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-key-for-local-dev')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -154,3 +154,4 @@ AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'your_s3_bucket_name'
 ALLOWED_HOSTS = ['happy.com', 'your_server_ip']
+PORT = int(os.getenv("PORT", 8000))

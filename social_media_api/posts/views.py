@@ -2,12 +2,13 @@ from django.shortcuts import render
 from rest_framework import viewsets, permissions, status
 from .models import Post, Comment
 from .serializers import PostSerializer, CommentSerializer
-from rest_framework import filters
+from rest_framework import filters, generics
 from .models import Post, Like
 from notifications.models import Notification
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -36,31 +37,32 @@ class PostViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
-    @action(detail=True, methods=['post'])
-    def like(self, request, pk=None):
+
+@action(detail=True, methods=['post'])
+class LikePostView(generics.GenericAPIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, pk):
+        # Fetch the post object using `get_object_or_404`
         post = get_object_or_404(Post, pk=pk)
-        user = request.user
+        
+        # Get or create a Like object
+        like, created = Like.objects.get_or_create(user=request.user, post=post)
+        
+        if created:
+            return Response({'message': 'Post liked!'}, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'message': 'You already liked this post.'}, status=status.HTTP_200_OK)
 
-        if Like.objects.filter(user=user, post=post).exists():
-            return Response({"error": "Already liked"}, status=status.HTTP_400_BAD_REQUEST)
+@action(detail=True, methods=['post'])
+class UnlikePostView(generics.GenericAPIView):
+    permission_classes = [IsAuthenticated]
 
-        Like.objects.create(user=user, post=post)
-        Notification.objects.create(
-            recipient=post.author,
-            actor=user,
-            verb="liked your post",
-            target=post
-        )
-        return Response({"status": "post liked"}, status=status.HTTP_201_CREATED)
-
-    @action(detail=True, methods=['post'])
-    def unlike(self, request, pk=None):
+    def post(self, request, pk):
         post = get_object_or_404(Post, pk=pk)
-        user = request.user
-
-        like = Like.objects.filter(user=user, post=post).first()
-        if like:
+        try:
+            like = Like.objects.get(user=request.user, post=post)
             like.delete()
-            return Response({"status": "post unliked"}, status=status.HTTP_200_OK)
-        return Response({"error": "Not liked yet"}, status=status.HTTP_400_BAD_REQUEST)
-    
+            return Response({'message': 'Post unliked!'}, status=status.HTTP_200_OK)
+        except Like.DoesNotExist:
+            return Response({'message': 'You have not liked this post.'}, status=status.HTTP_400_BAD_REQUEST)
